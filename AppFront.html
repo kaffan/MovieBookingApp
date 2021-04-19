@@ -1,0 +1,238 @@
+<html>
+        <head>
+            <title>BookUrShow</title>
+            <style>
+                header{
+           height:70px;
+           width:100%;
+           background-color:rgb(57, 9, 119);
+           color:#ffffff;
+           padding: 10px;
+           }
+           .close:hover,
+           .close:focus {
+                   color: #f44336;
+                   cursor: pointer;
+                        }
+           #g{
+               margin:auto;
+               margin-top: 200px;
+               align: center;
+               width:400px;
+               height:130px;
+               
+               padding: 30px;
+           }
+           #si{
+               margin:auto;
+               align:center;
+               width:200px;
+               height:30px;
+               margin-left: 100px;
+               background-color: rgb(29, 187, 29); 
+           }
+           #log{
+               margin: auto;
+               align:center;
+               width:200px;
+               height:30px;
+               margin-left: 100px;
+               background-color:  rgb(29, 187, 29); 
+           }
+           .modal{
+              display:none;
+              overflow:auto;
+              position:fixed;
+              background-color: rgb(203, 203, 241);
+              z-index: 1;
+              left:0;
+              top:0;
+              width:100%;
+              height:100%; 
+           }
+           .modal-content1{
+               width:50%;
+               margin:5% auto 20% auto;
+               height:100%;
+               background-color:white; 
+               padding: 40px;
+   
+           }
+           .modal-content2{
+               width:50%;
+               margin:5% auto 20% auto;
+               height:50%;
+               background-color:white; 
+               padding: 40px;
+   
+           }
+           .close{
+               color:black;
+               font-size:50px;
+               margin-left:95%;
+               top:10px;
+           }
+           .cancel, .subm{
+               height:40px;
+               width:200px;
+               background-color: rgb(23, 218, 23);
+           }
+            </style>
+            <script src="C:\Users\Saif\Desktop\affan\jquery-3.4.1.js"></script>
+            <script>
+   
+           function loadDoc(str,url,cFunction){
+         
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function(){
+            if(this.readyState==4 && this.status==200)
+            {
+                cFunction(this);
+            }
+         };   
+         xhttp.open("GET",url+str,true);
+         xhttp.send();
+         }
+
+         function myFunction1(xhttp){
+           document.getElementById('lb1').innerHTML=xhttp.responseText;
+      }
+      function myFunction2(xhttp){
+           document.getElementById('lb2').innerHTML=xhttp.responseText;
+      }
+      function myFunction3(xhttp){
+           document.getElementById('lb3').innerHTML=xhttp.responseText;
+      }
+      function myFunction4(xhttp){
+           document.getElementById('lb4').innerHTML=xhttp.responseText;
+      }
+      function myFunction5(xhttp){
+           document.getElementById('lb5').innerHTML=xhttp.responseText;
+      }
+      </script>
+       <script>
+         $(document).ready(function(){
+         $("#01").blur(function(){
+               str=$(this).val();
+               loadDoc(str,"user_one.php?q1=",myFunction1());
+         });
+         $("#02").blur(function(){
+               str=$(this).val();
+               loadDoc(str,"user_two.php?q2=",myFunction2());
+         });
+         $("#03").blur(function(){
+               str=$(this).val();
+               loadDoc(str,"user_three.php?q3=",myFunction3());
+         });
+         $("#04").blur(function(){
+               str=$(this).val();
+               loadDoc(str,"user_four.php?q4=",myFunction4());
+         });
+         $("#05").blur(function(){
+               str=$(this).val();
+               loadDoc(str,"user_five.php?q5=",myFunction5());
+         });
+         });
+         </script>
+         <script>
+        function validateForm()
+        {
+         var user = document.forms["register1"]["user"].value;
+         var dob = document.forms["register1"]["dob"].value;
+         var pswd = document.forms["register1"]["pswd"].value;
+         var npswd = document.forms["register1"]["npswd"].value;
+         var email = document.forms["register1"]["email"].value; 
+         var mobile = document.forms["register1"]["mobile"].value; 
+         var pd=/^[A-Za-z]\w{7,10}$/;
+         var phoneno = /^\d{10}$/;
+         var evalid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+   
+        if (!mobile.match(phoneno)) {
+          window.alert("Enter a valid Mobile No");
+          return false;
+          }  
+           
+        if (!email.match(evalid))                 
+       { 
+            
+           window.alert("Please enter a valid E-mail address."); 
+           return false; 
+       } 
+       if (!pswd.match(pd))                 
+       { 
+            
+           window.alert("Please Enter a valid Password.");
+           window.alert("Your password must contain between 7 to 10 characters which contain only characters, numeric digits, underscore and first character must be a letter"); 
+           return false; 
+       } 
+       if (pswd!=npswd)                 
+       { 
+            
+           window.alert("Your Entered Password is not matching with confirm password"); 
+           return false; 
+       } 
+         return true; 
+     }
+     
+            
+            </script>
+        </head>
+        <body background="films.jpg">
+            <header>
+                <span style="margin-left:40px; margin-top:20px; align:left; font-size:25px; ">BookUrShow</span>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="text-align:right;"> E-Mail:kaffan022@gmail.com</span><br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                <span style="text-align:right;">Customer Care:7304357388</span>
+             </header>
+             <div id="g">
+                <button id="si" type="button" onclick="document.getElementById('id01').style.display='block'">Sign Up</button><br><br>
+                <label style="align:center; margin-left: 180px;">OR</label><br><br>
+                <button id="log" type="button" onclick="document.getElementById('id02').style.display='block'">Log In</button>
+             </div>     
+   
+             <div id="id01" class="modal">
+               <span class="close" onclick="document.getElementById('id01').style.display='none'"><b>&times</b></span>
+               <form name="register1" class="modal-content1" action="/main.php" onsubmit="return validateForm()" method="post">
+                   <div class="container">
+                       <h1>SIGN UP</h1>
+                       <p>Kindly Fill Up This Form. </p>
+                       <label for="user"><b>Username</b></label><br><br>
+                       <input type="text" id="01" name="user" placeholder="Enter Username"><br>
+                       <label id="lb1" value></label><br><br>
+                       <label for="dob"><b>D.O.B</b></label><br><br>
+                       <input type="date" name="dob" placeholder="Enter Date Of Birth" required><br><br>
+                       <label for="pswd"><b>New Password</b></label><br><br>
+                       <input type="password" id="02" name="pswd" placeholder="Enter Passwod"><br><br>
+                       <label for="npswd"><b>Confirm Password</b></label><br>
+                       <label id="lb2"></label><br><br>
+                       <input type="Password" name="npswd" placeholder="Confirm Password" required><br><br>
+                       <label for="email"><b>Enter E-Mail</b></label><br><br>
+                       <input type="text" id="03" name="email" placeholder="E-Mail"><br>
+                       <label id="lb3"></label><br><br>
+                       <label for="mobile"><b>Enter Mobile No.</b></label><br><br>
+                       <input type="text" name="mobile" placeholder="Mobile No" required><br><br>
+                       <button class="subm" type="submit" value="submit">Sign Up</button>&nbsp;&nbsp;
+                       <button class="cancel" type="button" onclick="document.getElementById('id01').style.display='none'" >Cancel</button>
+                   </div>
+               </form>  
+             </div>
+   
+             <div id="id02" class="modal">
+                   <span class="close" onclick="document.getElementById('id02').style.display='none'"><b>&times</b></span>
+                   <form name="register2" class="modal-content2" action="/login.php"  method="post">
+                       <div class="container">-
+                           <h1><b>Login In</b></h1>
+                           <label for="user1"><b>Username</b></label><br><br>
+                           <input type="text" id="04" name="user1" placeholder="Enter Username"><br>
+                           <label id="lb4"></label><br><br>
+                           <label for="pswd1"><b>Password</b></label><br><br>
+                           <input type="password" id="05" name="pswd1" placeholder="Enter Password"><br>
+                           <label id="lb5"></label><br><br>
+                           <button class="subm" type="submit">Login</button>&nbsp;&nbsp;
+                           <button class="cancel" type="button" onclick="document.getElementById('id02').style.display='none'" >Cancel</button>
+                       </div>
+                   </form>  
+                 </div>
+        </body>
+     <html>

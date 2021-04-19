@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>CD_Catalog</title>
+        <script>
+            function loadDoc()
+            {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function()
+                {
+                    if(this.readyState==4 && this.status==200)
+                    {
+                        myFunction(this);
+                    }
+                }
+                xhttp.open("GET","cd_catalog.xml",true);
+                xhttp.send();
+            }
+            function myFunction(xhttp)
+            {
+                var i;
+                var xmlDoc = xhttp.responseXML;
+                var x = xmlDoc.getElementByTagName('cd');
+                var table="<tr><th>Title</th><th>Artist</th><th>Country</th><th>Company</th><th>Price</th><th>Year</th></tr>";
+                for(i=0;i<x.length;i++)
+                {
+                    table+="<tr><td>" + 
+                    x[i].getElementByTagName('tilte')[0].childNodes[0].nodeValue;
+                    + "</td><td>"+
+                    x[i].getElementByTagName('Artist')[0].childNodes[0].nodeValue;
+                    + "</td><td>"+
+                    x[i].getElementByTagName('Country')[0].childNodes[0].nodeValue;
+                    + "</td><td>"+
+                    x[i].getElementByTagName('Company')[0].childNodes[0].nodeValue;
+                    + "</td><td>"+
+                    x[i].getElementByTagName('Price')[0].childNodes[0].nodeValue;
+                    + "</td><td>"+
+                    x[i].getElementByTagName('Year')[0].childNodes[0].nodeValue;
+                    + "</td></tr>";
+                }
+                document.getElementById('t1').innerHTML = table;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="loadDoc()" id="1">Get CD_Catalog</button>
+        <table id="t1"></table>
+    </body>
+</html>
